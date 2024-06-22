@@ -1,0 +1,164 @@
+import 'dart:convert';
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:applicationecommerce/configs/AppConfigs.dart';
+import 'package:applicationecommerce/services/HttpClientFactory.dart';
+import 'package:applicationecommerce/view_models/Carts/CartCreateVM.dart';
+import 'package:applicationecommerce/view_models/Carts/CartVM.dart';
+import 'package:applicationecommerce/view_models/commons/ApiResult.dart';
+import 'package:applicationecommerce/view_models/commons/PaginatedList.dart';
+import 'package:http/http.dart';
+
+import 'UserServices.dart';
+
+class CartServices {
+  final String baseRoute = AppConfigs.URL_CartsRouteAPI;
+  final HttpClientFactory _httpClientFactory = HttpClientFactory();
+
+  Future<ApiResult<PaginatedList<CartVM>>> getAllByUserID(String userID) async {
+    IOClientWrapper ioClient = _httpClientFactory.createIOClientWrapper();
+    final String url = "$baseRoute/user?userID=$userID";
+    Response? response;
+    try {
+      log("GET: $url");
+      response = await ioClient.get(
+        Uri.parse(url),
+        headers: <String, String>{
+          'Authorization': 'Bearer ${UserServices.JWT!}'
+        },
+      );
+    } catch (e) {
+      return ApiResult<PaginatedList<CartVM>>.failedApiResult(
+          "Could not connect to server. Check your connection!");
+    }
+    if (response.statusCode == HttpStatus.ok ||
+        response.statusCode == HttpStatus.badRequest) {
+      var json = jsonDecode(response.body);
+      var result =
+          ApiResult<PaginatedList<CartVM>>.fromJson(json, (paginatedJson) {
+        return PaginatedList<CartVM>.fromJson(
+            paginatedJson as Map<String, dynamic>, (categoryJson) {
+          return CartVM.fromJson(categoryJson as Map<String, dynamic>);
+        });
+      });
+
+      if (result.isSuccessed == true) {
+        log("Fetched: ${result.payLoad!.items!.length}");
+        return ApiResult.succesedApiResult(result.payLoad);
+      } else {
+        return ApiResult.failedApiResult(result.errorMessage);
+      }
+    }
+
+    return ApiResult.failedApiResult("Some thing went wrong!");
+  }
+
+  Future<ApiResult<CartVM>> getByID(int foodID, String userID) async {
+    IOClientWrapper ioClient = _httpClientFactory.createIOClientWrapper();
+    final String url = "$baseRoute/details?foodID=$foodID&userId=$userID";
+    Response? response;
+    try {
+      log("GET: $url");
+      response = await ioClient.get(
+        Uri.parse(url),
+        headers: <String, String>{
+          'Authorization': 'Bearer ${UserServices.JWT!}'
+        },
+      );
+    } catch (e) {
+      print(e);
+      return ApiResult<CartVM>.failedApiResult(
+          "Could not connect to server! Please re-try later!");
+    }
+    if (response.statusCode == HttpStatus.ok ||
+        response.statusCode == HttpStatus.badRequest) {
+      var json = jsonDecode(response.body);
+      var result = ApiResult<CartVM>.fromJson(json, (foodJson) {
+        return CartVM.fromJson(foodJson as Map<String, dynamic>);
+      });
+
+      if (result.isSuccessed == true) {
+        print("Fetched CartVM: ");
+        print(result.payLoad);
+        return ApiResult.succesedApiResult(result.payLoad);
+      } else {
+        return ApiResult.failedApiResult(result.errorMessage);
+      }
+    }
+
+    return ApiResult.failedApiResult("Some thing went wrong!");
+  }
+
+  Future<ApiResult<bool>> delete(int foodID, String userID) async {
+    IOClientWrapper ioClient = _httpClientFactory.createIOClientWrapper();
+    final String url = "$baseRoute?foodID=$foodID&userId=$userID";
+    Response? response;
+    try {
+      log("DELETE: $url");
+      response = await ioClient.delete(
+        Uri.parse(url),
+        headers: <String, String>{
+          'Authorization': 'Bearer ${UserServices.JWT!}'
+        },
+      );
+    } catch (e) {
+      print(e);
+      return ApiResult<bool>.failedApiResult(
+          "Could not connect to server! Please re-try later!");
+    }
+    if (response.statusCode == HttpStatus.ok ||
+        response.statusCode == HttpStatus.badRequest) {
+      var json = jsonDecode(response.body);
+      var result = ApiResult<bool>.fromJson(json, (child) {
+        return child as bool;
+      });
+
+      if (result.isSuccessed == true) {
+        print("Deleted CartVM: foodID = $foodID, userID = $userID");
+        return ApiResult.succesedApiResult(result.payLoad);
+      } else {
+        return ApiResult.failedApiResult(result.errorMessage);
+      }
+    }
+
+    return ApiResult.failedApiResult("Some thing went wrong!");
+  }
+
+  Future<ApiResult<CartVM>> editOrCreate(
+      int foodID, int quantity, String userID) async {
+    log("editOrCreate cart: $userID $foodID $quantity");
+    IOClientWrapper ioClient = _httpClientFactory.createIOClientWrapper();
+    Response? response;
+    CartCreateVM cartCreateVM = CartCreateVM();
+    cartCreateVM.appUserId = userID;
+    cartCreateVM.foodID = foodID;
+    cartCreateVM.quantity = quantity;
+    try {
+      String url = "$baseRoute/edit_or_create";
+      log("Post $url");
+      response = await ioClient.post(Uri.parse(url),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'Authorization': 'Bearer ${UserServices.JWT!}'
+          },
+          body: jsonEncode(cartCreateVM));
+    } catch (e) {
+      return ApiResult<CartVM>.failedApiResult(
+          "Could not connect to server. Check your connection!");
+    }
+    if (response.statusCode == HttpStatus.ok ||
+        response.statusCode == HttpStatus.badRequest) {
+      var json = jsonDecode(response.body);
+      var result = ApiResult<CartVM>.fromJson(
+          json, (a) => CartVM.fromJson(a as Map<String, dynamic>));
+      if (result.isSuccessed == true) {
+        log("Cart create succesed!");
+        log("Cart: ${result.payLoad!}");
+      }
+      return result;
+    }
+
+    return ApiResult.failedApiResult("Some thing went wrong!");
+  }
+}
