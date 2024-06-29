@@ -52,7 +52,7 @@ class OrderItem extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             height: 115,
-            color: const Color(0xffFE724C),
+            color: const Color(0xFF00B14F),
             child: Column(
               children: [
                 Container(
@@ -149,13 +149,13 @@ class OrderItem extends StatelessWidget {
                       const Text(
                         "\$ ",
                         style: TextStyle(
-                          color: Color(0xffFE724C),
+                          color: Color(0xFF00B14F),
                         ),
                       ),
                       Text(
                         AppConfigs.toPrice(price),
                         style: const TextStyle(
-                          color: Color(0xffFE724C),
+                          color: Color(0xFF00B14F),
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
                         ),

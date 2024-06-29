@@ -168,7 +168,7 @@ class OrderDetailsBody extends StatelessWidget {
                               children: [
                                 const Icon(
                                   Icons.my_location,
-                                  color: Color(0xffFE724C),
+                                  color: Color(0xFF00B14F),
                                   size: 20,
                                 ),
                                 const SizedBox(

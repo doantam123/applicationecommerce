@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="Foodie Fare"
+        android:label="Huflit Food"
         android:name="${applicationName}"
-        android:icon="@mipmap/mylogoapp">
+        android:icon="@mipmap/huflitfoodlogo">
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -168,7 +168,7 @@ class CheckoutBar extends StatelessWidget {
                   child: MaterialButton(
                     height: 50,
                     minWidth: 100,
-                    color: const Color(0xffFE724C),
+                    color: const Color(0xFF00B14F),
                     shape: RoundedRectangleBorder(
                       borderRadius:
                           BorderRadius.circular(12), // Đặt bán kính cho góc

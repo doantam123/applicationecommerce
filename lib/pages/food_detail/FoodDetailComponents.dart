@@ -25,7 +25,7 @@ class NamePrice extends StatelessWidget {
               AppConfigs.toPrice(finalPrice),
               style: const TextStyle(
                   fontSize: 23.0,
-                  color: Color(0xffFE724C),
+                  color: Color(0xFF00B14F),
                   fontWeight: FontWeight.w400),
             ),
             Text(
@@ -133,7 +133,7 @@ class _DescriptionAndRatingState extends State<DescriptionAndRating>
         children: <Widget>[
           TabBar(
             labelPadding: const EdgeInsets.symmetric(horizontal: 35),
-            labelColor: const Color(0xffFE724C),
+            labelColor: const Color(0xFF00B14F),
             labelStyle:
                 const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             isScrollable: true,

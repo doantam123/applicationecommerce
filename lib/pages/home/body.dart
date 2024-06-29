@@ -40,8 +40,6 @@ class _BodyState extends State<Body> {
   void initState() {
     _appBannerImages = [
       "images/app_banner/banner1.png",
-      "images/app_banner/banner2.png",
-      "images/app_banner/banner3.png",
       "images/app_banner/banner4.png",
       "images/app_banner/banner5.png",
     ];
@@ -126,7 +124,7 @@ class _BodyState extends State<Body> {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromARGB(255, 253, 69, 18), // Màu cho nửa trên
+            Color(0xFF00B14F), // Màu cho nửa trên
             Colors.white, // Màu cho nửa dưới
           ],
           begin: Alignment.topCenter, // Bắt đầu gradient từ trên xuống
@@ -232,21 +230,20 @@ class _BodyState extends State<Body> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: Container(
-                                width: 100,
-                                height: 100,
+                                width: 200,
+                                height: 130,
                                 decoration: BoxDecoration(
-                                  color:
-                                      const Color.fromARGB(255, 255, 196, 179),
+                                  color: Color.fromARGB(255, 167, 236, 133),
                                   borderRadius: BorderRadius.circular(
                                       12), // Đặt độ cong cho góc
                                 ),
                                 child: SizedBox(
-                                  width: 80,
-                                  height: 80,
+                                  width: 150,
+                                  height: 120,
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(90),
+                                      borderRadius: BorderRadius.circular(15),
                                       child: CachedNetworkImage(
                                         placeholder: (context, index) => Center(
                                           child: CircularProgressIndicator(
@@ -256,7 +253,7 @@ class _BodyState extends State<Body> {
                                         ),
                                         imageUrl:
                                             "${AppConfigs.URL_Images}/${state.listPromotionsValid[index].imagePath}",
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
@@ -288,7 +285,7 @@ class _BodyState extends State<Body> {
                                             .listPromotionsValid[index].max!),
                                         style: const TextStyle(
                                             fontSize: 16,
-                                            color: Color(0xffFE724C))),
+                                            color: Color(0xFF00B14F))),
                                   ],
                                 ),
                               ),
@@ -385,8 +382,12 @@ class _BodyState extends State<Body> {
           } else {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 14),
-              child: CategoryItem("Tất Cả",
-                  "a49ee469-c8e9-425f-b365-dcb86907b8cd.png", 99, categories),
+              child: CategoryItem(
+                "Tất Cả",
+                'a49ee469-c8e9-425f-b365-dcb86907b8cd.png', 
+                99,
+                categories,
+              ),
             );
           }
         },
@@ -397,7 +398,7 @@ class _BodyState extends State<Body> {
 
 // ignore: must_be_immutable
 class CategoryItem extends StatelessWidget {
-  Color transparentColor = const Color(0xffFE724C);
+  Color transparentColor = const Color(0xFF00B14F);
   final String name;
   final String image;
   final int id;
@@ -425,8 +426,8 @@ class CategoryItem extends StatelessWidget {
             decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [
-                    Color.fromARGB(90, 255, 55, 0), // Màu cho nửa trên
-                    Color.fromARGB(181, 255, 143, 112), // Màu cho nửa dưới
+                    Color(0xFF00B14F), // Màu cho nửa trên
+                    Color.fromARGB(181, 225, 233, 228), // Màu cho nửa dưới
                   ],
                   begin: Alignment.topCenter, // Bắt đầu gradient từ trên xuống
                   end: Alignment.bottomCenter, // Kết thúc gradient từ dưới lên
@@ -442,7 +443,7 @@ class CategoryItem extends StatelessWidget {
                 width: 30,
                 height: 30,
                 child: CachedNetworkImage(
-                  fit: BoxFit.contain,
+                  fit: BoxFit.cover,
                   placeholder: (context, url) => Center(
                       child: CircularProgressIndicator(
                     color: AppTheme.circleProgressIndicatorColor,
@@ -500,11 +501,11 @@ void _showBottomSheet(BuildContext context, List<CategoryVM> categories) {
                 children: <Widget>[
                   const ListTile(
                     title: Text(
-                      "Mời Bạn Xem Danh Mục Món Ăn",
+                      "      Mời Bạn Xem Danh Mục Món Ăn",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, // Make title bolder
                           fontSize: 18.0,
-                          color: Colors.red // Adjust title font size
+                          color: Colors.green // Adjust title font size
                           ),
                     ),
                   ),
@@ -764,7 +765,7 @@ class _FoodWidget extends StatelessWidget {
                     width: double.infinity,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: Colors.orange, // Đặt màu nền là màu cam
+                      color: Colors.green, // Đặt màu nền là màu cam
                       //  shape: BoxShape.circle, // Đặt hình dạng là hình tròn
                     ),
                     child: InkWell(

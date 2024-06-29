@@ -105,6 +105,12 @@ flutter:
     - images/voucher.png
     - images/logo_foodie.png
     - images/name_logo.png
+    - images/login.png
+    - images/resetpass.png
+    - images/register.png
+    - images/huflitfoodlogo.png
+
+    
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

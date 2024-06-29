@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
 
           print('Floating Action Button pressed!');
         }, // Biểu tượng hiển thị bên trong nút
-        backgroundColor: const Color(0xffFE724C),
+        backgroundColor: const Color(0xFF00B14F),
         child: const Icon(
           Icons.chat,
           color: Colors.white,

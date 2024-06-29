@@ -45,7 +45,7 @@ class AdressItem extends StatelessWidget {
               width: 50,
               child: Icon(
                 Icons.location_pin,
-                color: Color(0xffFE724C),
+                color: Color(0xFF00B14F),
               ),
             ),
             Expanded(

@@ -162,7 +162,7 @@ class PromotionItem extends StatelessWidget {
                                     AppConfigs.AppDateFormat.format(
                                         _promotionVM.endDate),
                                     style: const TextStyle(
-                                        color: Color(0xffFE724C),
+                                        color: Color(0xFF00B14F),
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ],
@@ -235,7 +235,7 @@ class PromotionItem extends StatelessWidget {
                 child: const Text(
                   "Xem",
                   style: TextStyle(
-                      color: Color(0xffFE724C),
+                      color: Color(0xFF00B14F),
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),

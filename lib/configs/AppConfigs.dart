@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 
 class AppConfigs {
   static const String URL_BaseBotAPI =
-      "http://192.168.1.16:5000/webhooks/rest/webhook";
-  static const String URL_BaseAPI = "http://192.168.1.16:5000";
+      "http://192.168.1.12:5000/webhooks/rest/webhook";
+  static const String URL_BaseAPI = "http://192.168.1.12:5000";
   static const String URL_UserRouteAPI = URL_BaseAPI + "/api/Users";
   static const String URL_CategoryRouteAPI = URL_BaseAPI + "/api/Category";
   static const String URL_FoodRouteAPI = URL_BaseAPI + "/api/Food";

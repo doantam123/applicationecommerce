@@ -39,20 +39,20 @@ ThemeData basicTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
     textTheme: basicTextTheme(base.textTheme),
-    primaryColor: const Color(0xfffe724c), // Header Colors
-    highlightColor: const Color(0xfffe724c), // primary colors button
-    indicatorColor: const Color(0xfffe724c), // line color when hover input
+    primaryColor: const Color(0xFF00B14F), // Header Colors
+    highlightColor: const Color(0xFF00B14F), // primary colors button
+    indicatorColor: const Color(0xFF00B14F), // line color when hover input
     bottomNavigationBarTheme: base.bottomNavigationBarTheme.copyWith(
-        selectedItemColor: const Color(0xfffe724c), unselectedItemColor: Colors.grey),
+        selectedItemColor: const Color(0xFF00B14F), unselectedItemColor: Colors.grey),
     tabBarTheme: base.tabBarTheme.copyWith(
-      labelColor: const Color(0xfffe724c),
+      labelColor: const Color(0xFF00B14F),
       labelStyle: const TextStyle(fontFamily: 'Montserrat'), //label color
       unselectedLabelStyle: const TextStyle(fontFamily: 'Montserrat'),
       unselectedLabelColor: Colors.black, // unselected label of Tabbar color
       indicator: const ShapeDecoration(
         shape: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Color(0xfffe724c),
+            color: Color(0xFF00B14F),
           ), // underline color of TabBaritem
         ),
       ),
@@ -69,7 +69,7 @@ ThemeData basicTheme() {
           const TextStyle(color: Colors.grey, fontFamily: 'Montserrat', fontSize: 12),
     ),
     textSelectionTheme: base.textSelectionTheme.copyWith(
-      cursorColor: const Color(0xfffe724c),
+      cursorColor: const Color(0xFF00B14F),
     ),
   );
 }

@@ -93,10 +93,10 @@ class _FoodDetailState extends State<FoodDetail> with TickerProviderStateMixin {
                               color: Colors.white,
                               border: Border.all(
                                   style: BorderStyle.solid,
-                                  color: const Color(0xFFFE724C))),
+                                  color: const Color(0xFF00B14F))),
                           child: const Icon(
                             Icons.remove,
-                            color: Color(0xFFFE724C),
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -124,7 +124,7 @@ class _FoodDetailState extends State<FoodDetail> with TickerProviderStateMixin {
                           height: 30,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(1000),
-                            color: const Color(0xFFFE724C),
+                            color: const Color(0xFF00B14F),
                           ),
                           child: const Icon(
                             Icons.add,

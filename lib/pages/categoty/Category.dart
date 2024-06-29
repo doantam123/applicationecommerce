@@ -315,7 +315,7 @@ class FoodCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: const Color(0xffFE724C),
+                                color: const Color(0xFF00B14F),
                                 width: 2.0,
                                 style: BorderStyle.solid,
                               ),
@@ -402,7 +402,7 @@ class FoodCard extends StatelessWidget {
                         margin:
                             EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                         decoration: BoxDecoration(
-                          color: Colors.orange,
+                          color: Colors.green,
                           shape: BoxShape.circle,
                         ),
                         child: InkWell(

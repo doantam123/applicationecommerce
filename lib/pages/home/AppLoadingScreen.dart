@@ -38,7 +38,7 @@ class _AppLoadingScreenState extends State<AppLoadingScreen>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xffFE724C),
+      color: const Color(0xFF00B14F),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -47,14 +47,13 @@ class _AppLoadingScreenState extends State<AppLoadingScreen>
               width: 120,
               height: 90,
               child: Image.asset(
-                'images/logo_foodie.png',
+                'images/huflitfoodlogo.png',
                 fit: BoxFit.fill,
               ),
             ),
             AnimatedBuilder(
                 animation: animationController,
                 builder: (BuildContext context, Widget? child) {
-                  //print(animationController.value);
                   var angle = sin(animationController.value) * 0.3;
                   return Transform(
                     transform: Matrix4.rotationZ(angle),
@@ -62,10 +61,6 @@ class _AppLoadingScreenState extends State<AppLoadingScreen>
                     child: SizedBox(
                       width: 100,
                       height: 40,
-                      child: Image.asset(
-                        'images/name_logo.png',
-                        fit: BoxFit.fill,
-                      ),
                     ),
                   );
                 })

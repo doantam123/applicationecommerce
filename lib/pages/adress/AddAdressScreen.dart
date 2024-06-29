@@ -56,7 +56,7 @@ class _BodyAdressScreenState extends State<BodyAdressScreen> {
                   labelText: 'Tên',
                   suffixIcon: Icon(
                     Icons.person_pin,
-                    color: Color(0xffFE724C),
+                    color: Color(0xFF00B14F),
                   ),
                   border: OutlineInputBorder(),
                 ),
@@ -69,7 +69,7 @@ class _BodyAdressScreenState extends State<BodyAdressScreen> {
                   labelText: 'Địa chỉ',
                   suffixIcon: Icon(
                     Icons.location_on,
-                    color: Color(0xffFE724C),
+                    color: Color(0xFF00B14F),
                   ),
                   border: OutlineInputBorder(),
                 ),

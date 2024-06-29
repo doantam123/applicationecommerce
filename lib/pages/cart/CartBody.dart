@@ -181,7 +181,7 @@ class Body extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.location_on,
-                                  color: Color(0xffFE724C),
+                                  color: Color(0xFF00B14F),
                                 ),
                                 Text(
                                   "Địa điểm nhận hàng",
@@ -202,7 +202,7 @@ class Body extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
                               style: const TextStyle(
-                                  color: Color.fromARGB(255, 197, 56, 0),
+                                  color: Color.fromARGB(255, 228, 19, 19),
                                   fontSize: 18),
                             )),
                       )
@@ -231,7 +231,7 @@ class Body extends StatelessWidget {
                     child: Text(
                       "SỬA",
                       style: TextStyle(
-                          color: Color.fromARGB(255, 243, 107, 16),
+                          color: Color.fromARGB(255, 13, 188, 24),
                           fontSize: 22),
                     ),
                   ),
