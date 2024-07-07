@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const SizedBox(
-                    height: 30,
+                    height: 150,
                   ),
                   const Text(
                     "Đăng nhập",
@@ -242,7 +242,7 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                   const SizedBox(
-                    height: 200,
+                    height: 20,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -253,14 +253,14 @@ class _LoginPageState extends State<LoginPage> {
                         color: Color(0xFF00B14F),
                       ),
                       InkWell(
-                          onTap: () {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return const YoutubePlayerCustomSubtitle();
-                            }));
-                          },
+                          // onTap: () {
+                          //   Navigator.of(context)
+                          //       .push(MaterialPageRoute(builder: (context) {
+                          //     return const YoutubePlayerCustomSubtitle();
+                          //   }));
+                          // },
                           child: const Text(
-                            'Hướng Dẫn Sử Dụng',
+                            'Make by Doan Tam',
                             style:
                                 TextStyle(color: Color(0xFF00B14F), fontSize: 16),
                           )),

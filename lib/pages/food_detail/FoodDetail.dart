@@ -90,7 +90,7 @@ class _FoodDetailState extends State<FoodDetail> with TickerProviderStateMixin {
                           height: 30,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(1000),
-                              color: Colors.white,
+                              color: Color(0xFF00B14F),
                               border: Border.all(
                                   style: BorderStyle.solid,
                                   color: const Color(0xFF00B14F))),

@@ -423,9 +423,9 @@ class FoodCard extends StatelessWidget {
                             }
                           },
                           child: Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: Icon(
-                              Icons.shopping_cart,
+                              Icons.add,
                               color: Colors.white,
                             ),
                           ),

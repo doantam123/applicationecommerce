@@ -60,7 +60,7 @@ class _SignupPageState extends State<SignupPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 10,
+                      height: 120,
                     ),
                     const Text(
                       "Đăng ký",

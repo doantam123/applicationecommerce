@@ -53,7 +53,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 16.0),
+                const SizedBox(height: 100.0),
                 const Text(
                   'Số điện thoại',
                   style: TextStyle(

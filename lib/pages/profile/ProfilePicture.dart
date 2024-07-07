@@ -8,7 +8,7 @@ class ProfilePic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
+      height: 120,
       child: SizedBox(
         width: 115,
         height: 115,
@@ -23,13 +23,13 @@ class ProfilePic extends StatelessWidget {
                 bottom: 20,
                 right: -8,
                 child: SizedBox(
-                  height: 30,
-                  width: 30,
+                  height: 15,
+                  width: 15,
                   child: TextButton(
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
+                          borderRadius: BorderRadius.circular(16),
                           side: const BorderSide(color: Colors.white),
                         ),
                         backgroundColor: Colors.grey.shade200,
